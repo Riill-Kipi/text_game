@@ -3,15 +3,15 @@ namespace project
 {
     class Program
     {
-        static int roomNumber = 1; // От куда начинаем игру
-        static bool Vopros = false; //Задача
-        static bool zadaha = false;  // Выполнения задачи
-        static string name = ""; // Имя гг
+        static int roomNumber = 1; // start the game 
+        static bool Vopros = false; // task
+        static bool zadaha = false;  // task completion
+        static string name = ""; // Name GG
         static void Main(string[] args)
         {
             seve();
-            Start(); // Выбор имени 
-            Introduction(); // Предыстория
+            Start(); // choosing name
+            Introduction(); // warnings
 
 
 
@@ -25,7 +25,7 @@ namespace project
             }
         }
 
-        static void ActionStarship() //Класс (1)
+        static void ActionStarship() // action 1
         {
             Console.Clear();
             Console.WriteLine("*Вы стоите по середине класса*");
@@ -66,7 +66,7 @@ namespace project
                 exit();
             }
         }
-        static void ActionTemple() // Преподователь (2)
+        static void ActionTemple() // Action (2)
         {
             Console.Clear();
             Console.WriteLine("*Вы не уверена подошли к преподователю*");
@@ -113,7 +113,7 @@ namespace project
                 roomNumber = 3;
             }
         }
-        static void Level1() // Работа с компьютером (3)
+        static void Level1() // action (3)
         {
             Console.Clear();
             Console.WriteLine("");
@@ -141,7 +141,7 @@ namespace project
                 zadaha = true;
             }
         }
-        static void Level2() //развязка с хакером (4)
+        static void Level2() //action (4)
         {
 
         }
@@ -203,7 +203,7 @@ namespace project
             Console.ReadLine();
 
         }
-        static void Start() // Имя для ГГ
+        static void Start() 
         {
             if (name == "")
             {
@@ -243,7 +243,7 @@ namespace project
 
             }
         }
-        static int GetIntInRange(int optionsNumber) // проверка что мы пишем только нужные числа
+        static int GetIntInRange(int optionsNumber) // checking the correct input 
         {
             string input = Console.ReadLine();
             int number = -1;
@@ -253,7 +253,7 @@ namespace project
             while (!isConverted || !isInRange)
             {
 
-                Console.WriteLine("Неверная опция! ");
+                Console.WriteLine("Invalid option! ");
                 input = Console.ReadLine();
                 isConverted = int.TryParse(input, out number);
                 isInRange = number >= 1 && number <= optionsNumber;
@@ -264,18 +264,18 @@ namespace project
         }
 
         static void seve()
-        {
-                Console.WriteLine("Работа с сохранениями");
+        
+                Console.WriteLine("saves");
                 Console.ReadLine();
-                File.AppendAllText(@".\file.txt", name); // Сохраняем эту строку в файл
-                name = File.ReadAllText(@".\file.txt"); // Считываем весь текст из файла
+                File.AppendAllText(@".\file.txt", name); // saving the string to a file
+                name = File.ReadAllText(@".\file.txt"); // reading the saved data into a file 
         }
         static void seve1()
         {
-            Console.WriteLine("Работа с сохранениями");
+            Console.WriteLine("Saves");
             Console.ReadLine();
-            File.AppendAllText(@".\file.txt", name); // Сохраняем эту строку в файл
-            name = File.ReadAllText(@".\file.txt"); // Считываем весь текст из файла
+            File.AppendAllText(@".\file.txt", name); //
+            name = File.ReadAllText(@".\file.txt"); // 
         }
     }
 }
